@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+      <Border info="null"/>
+    </Property>
+    <Property name="closable" type="boolean" value="true"/>
+    <Property name="iconifiable" type="boolean" value="true"/>
+    <Property name="maximizable" type="boolean" value="true"/>
+    <Property name="resizable" type="boolean" value="true"/>
+    <Property name="title" type="java.lang.String" value="Gestion Ventas"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,25,0,0,5,56"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnl_encabezadoGV">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[685, 50]"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="North"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="0"/>
+        <Property name="rows" type="int" value="1"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lbl_tituloGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="24" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Gestion de Ventas"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnl_derechoGV">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[50, 249]"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="East"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="666" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnl_pieGV">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[685, 50]"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="South"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
+        <Property name="verticalGap" type="int" value="15"/>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="btn_nuevoGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nuevo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_nuevoGVActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_cancelarGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cancelar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cancelarGVActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_guardarGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Guardar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_guardarGVActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_imprimirGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Imprimir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_imprimirGVActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_salirGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Salir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_salirGVActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnl_izquierdoGV">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[50, 249]"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="West"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="666" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnl_centralGV">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JTabbedPane" name="tbp_menuGV">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Century Gothic" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="Center"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <SubComponents>
+            <Container class="javax.swing.JPanel" name="pnl_formularioGV">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Gestion">
+                    <Property name="tabTitle" type="java.lang.String" value="Gestion"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JPanel" name="pnl_encabezadoGestionGV">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Century Gothic" size="14" style="1"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[808, 50]"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="North"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                  <SubComponents>
+                    <Component class="com.toedter.calendar.JDateChooser" name="jdch_fechaVentaGV">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Century Gothic" size="14" style="1"/>
+                        </Property>
+                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                          <Dimension value="[120, 20]"/>
+                        </Property>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="East"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="pnl_centralGestionGV">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="Center"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="pnl_busquedaGV">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="Center"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                        <Property name="columns" type="int" value="0"/>
+                        <Property name="rows" type="int" value="1"/>
+                      </Layout>
+                      <SubComponents>
+                        <Container class="javax.swing.JTabbedPane" name="tbp_busquedaGV">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Century Gothic" size="14" style="1"/>
+                            </Property>
+                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                              <Dimension value="[1070, 130]"/>
+                            </Property>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+                          <SubComponents>
+                            <Container class="javax.swing.JPanel" name="pnl_busquedaClienteGV">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[1059, 130]"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                                  <JTabbedPaneConstraints tabName="Cliente">
+                                    <Property name="tabTitle" type="java.lang.String" value="Cliente"/>
+                                  </JTabbedPaneConstraints>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                              <SubComponents>
+                                <Container class="javax.swing.JPanel" name="pnl_encabezadoBusquedaClienteGV">
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                      <BorderConstraints direction="North"/>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                                  <SubComponents>
+                                    <Component class="javax.swing.JLabel" name="lbl_buscarClientePorDniGV">
+                                      <Properties>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="text" type="java.lang.String" value="Buscar Cliente Por Dni: "/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JTextField" name="txt_buscarClientePorDniGV">
+                                      <Properties>
+                                        <Property name="columns" type="int" value="5"/>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="horizontalAlignment" type="int" value="4"/>
+                                      </Properties>
+                                      <Events>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txt_buscarClientePorDniGVActionPerformed"/>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_buscarClientePorDniGVKeyReleased"/>
+                                      </Events>
+                                    </Component>
+                                  </SubComponents>
+                                </Container>
+                                <Container class="javax.swing.JPanel" name="pnl_listadoClienteGV">
+                                  <Properties>
+                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[452, 350]"/>
+                                    </Property>
+                                  </Properties>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                      <BorderConstraints direction="South"/>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                                  <SubComponents>
+                                    <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                                      <Properties>
+                                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                          <Dimension value="[452, 400]"/>
+                                        </Property>
+                                      </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                                      </AuxValues>
+                                      <Constraints>
+                                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                          <BorderConstraints direction="Center"/>
+                                        </Constraint>
+                                      </Constraints>
+
+                                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                                      <SubComponents>
+                                        <Component class="javax.swing.JTable" name="tb_listadoClienteGV">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Century Gothic" size="14" style="1"/>
+                                            </Property>
+                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                              <Table columnCount="0" rowCount="4"/>
+                                            </Property>
+                                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                              <TableColumnModel selectionModel="0"/>
+                                            </Property>
+                                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                            </Property>
+                                          </Properties>
+                                        </Component>
+                                      </SubComponents>
+                                    </Container>
+                                  </SubComponents>
+                                </Container>
+                              </SubComponents>
+                            </Container>
+                            <Container class="javax.swing.JPanel" name="pnl_busquedaProductoGV">
+                              <Properties>
+                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                  <Dimension value="[1065, 150]"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                                  <JTabbedPaneConstraints tabName=" Producto">
+                                    <Property name="tabTitle" type="java.lang.String" value=" Producto"/>
+                                  </JTabbedPaneConstraints>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                              <SubComponents>
+                                <Container class="javax.swing.JPanel" name="pnl_tablaDetalleVentaGV">
+                                  <Properties>
+                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[808, 100]"/>
+                                    </Property>
+                                  </Properties>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                      <BorderConstraints direction="South"/>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                                    <Property name="columns" type="int" value="0"/>
+                                    <Property name="rows" type="int" value="1"/>
+                                  </Layout>
+                                  <SubComponents>
+                                    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                                      <AuxValues>
+                                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                                      </AuxValues>
+
+                                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                                      <SubComponents>
+                                        <Component class="javax.swing.JTable" name="tb_listadoDetalleVentaGV">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Century Gothic" size="14" style="1"/>
+                                            </Property>
+                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                              <Table columnCount="0" rowCount="0"/>
+                                            </Property>
+                                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                              <TableColumnModel selectionModel="0"/>
+                                            </Property>
+                                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                            </Property>
+                                          </Properties>
+                                        </Component>
+                                      </SubComponents>
+                                    </Container>
+                                  </SubComponents>
+                                </Container>
+                                <Container class="javax.swing.JPanel" name="pnl_filtradoProductoGV">
+                                  <Properties>
+                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[1065, 50]"/>
+                                    </Property>
+                                  </Properties>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                      <BorderConstraints direction="North"/>
+                                    </Constraint>
+                                  </Constraints>
+                                  <SubComponents>
+                                    <Component class="javax.swing.JLabel" name="lbl_busquedaProductoPorMarca">
+                                      <Properties>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="text" type="java.lang.String" value="Buscar Producto Por Marca: "/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JComboBox" name="cmb_buscarProductoPorMarcaGV">
+                                      <Properties>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                          <StringArray count="0"/>
+                                        </Property>
+                                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                          <Dimension value="[130, 25]"/>
+                                        </Property>
+                                      </Properties>
+                                      <Events>
+                                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cmb_buscarProductoPorMarcaGVItemStateChanged"/>
+                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmb_buscarProductoPorMarcaGVActionPerformed"/>
+                                      </Events>
+                                    </Component>
+                                    <Component class="javax.swing.JLabel" name="lbl_busquedaProductoPorTipoGV">
+                                      <Properties>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="text" type="java.lang.String" value="Buscar Producto Por Tipo:"/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JComboBox" name="cmb_buscarProductoPorTipoGV">
+                                      <Properties>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                          <StringArray count="0"/>
+                                        </Property>
+                                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                          <Dimension value="[130, 25]"/>
+                                        </Property>
+                                      </Properties>
+                                      <Events>
+                                        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cmb_buscarProductoPorTipoGVItemStateChanged"/>
+                                      </Events>
+                                    </Component>
+                                    <Component class="javax.swing.JLabel" name="lbl_buscarProductoPorNombreGV">
+                                      <Properties>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                        <Property name="text" type="java.lang.String" value="Buscar Producto Por Nombre:"/>
+                                      </Properties>
+                                    </Component>
+                                    <Component class="javax.swing.JTextField" name="txt_buscarProductoPorNombreGV">
+                                      <Properties>
+                                        <Property name="columns" type="int" value="15"/>
+                                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                          <Font name="Century Gothic" size="14" style="1"/>
+                                        </Property>
+                                      </Properties>
+                                      <Events>
+                                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_buscarProductoPorNombreGVKeyReleased"/>
+                                      </Events>
+                                    </Component>
+                                  </SubComponents>
+                                  <LayoutCode>
+                                    <CodeStatement>
+                                      <CodeExpression id="1_flowLayout1">
+                                        <CodeVariable name="flowLayout1" type="4096" declaredType="java.awt.FlowLayout"/>
+                                        <ExpressionOrigin>
+                                          <ExpressionProvider type="CodeConstructor">
+                                            <CodeConstructor class="java.awt.FlowLayout" parameterTypes=""/>
+                                          </ExpressionProvider>
+                                        </ExpressionOrigin>
+                                      </CodeExpression>
+                                      <StatementProvider type="CodeExpression">
+                                        <CodeExpression id="1_flowLayout1"/>
+                                      </StatementProvider>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="1_flowLayout1"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="setAlignOnBaseline" class="java.awt.FlowLayout" parameterTypes="boolean"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="2">
+                                          <ExpressionOrigin>
+                                            <Value type="boolean" value="true"/>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV">
+                                        <CodeVariable name="pnl_filtradoProductoGV" type="8194" declaredType="javax.swing.JPanel"/>
+                                        <ExpressionOrigin>
+                                          <ExpressionProvider type="ComponentRef">
+                                            <ComponentRef name="pnl_filtradoProductoGV"/>
+                                          </ExpressionProvider>
+                                        </ExpressionOrigin>
+                                      </CodeExpression>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="setLayout" class="java.awt.Container" parameterTypes="java.awt.LayoutManager"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="1_flowLayout1"/>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="4_lbl_busquedaProductoPorMarca">
+                                          <CodeVariable name="lbl_busquedaProductoPorMarca" type="8194" declaredType="javax.swing.JLabel"/>
+                                          <ExpressionOrigin>
+                                            <ExpressionProvider type="ComponentRef">
+                                              <ComponentRef name="lbl_busquedaProductoPorMarca"/>
+                                            </ExpressionProvider>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="5_cmb_buscarProductoPorMarcaGV">
+                                          <CodeVariable name="cmb_buscarProductoPorMarcaGV" type="8194" declaredType="javax.swing.JComboBox"/>
+                                          <ExpressionOrigin>
+                                            <ExpressionProvider type="ComponentRef">
+                                              <ComponentRef name="cmb_buscarProductoPorMarcaGV"/>
+                                            </ExpressionProvider>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="6_lbl_busquedaProductoPorTipoGV">
+                                          <CodeVariable name="lbl_busquedaProductoPorTipoGV" type="8194" declaredType="javax.swing.JLabel"/>
+                                          <ExpressionOrigin>
+                                            <ExpressionProvider type="ComponentRef">
+                                              <ComponentRef name="lbl_busquedaProductoPorTipoGV"/>
+                                            </ExpressionProvider>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="7_cmb_buscarProductoPorTipoGV">
+                                          <CodeVariable name="cmb_buscarProductoPorTipoGV" type="8194" declaredType="javax.swing.JComboBox"/>
+                                          <ExpressionOrigin>
+                                            <ExpressionProvider type="ComponentRef">
+                                              <ComponentRef name="cmb_buscarProductoPorTipoGV"/>
+                                            </ExpressionProvider>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="8_lbl_buscarProductoPorNombreGV">
+                                          <CodeVariable name="lbl_buscarProductoPorNombreGV" type="8194" declaredType="javax.swing.JLabel"/>
+                                          <ExpressionOrigin>
+                                            <ExpressionProvider type="ComponentRef">
+                                              <ComponentRef name="lbl_buscarProductoPorNombreGV"/>
+                                            </ExpressionProvider>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                    <CodeStatement>
+                                      <CodeExpression id="3_pnl_filtradoProductoGV"/>
+                                      <StatementProvider type="CodeMethod">
+                                        <CodeMethod name="add" class="java.awt.Container" parameterTypes="java.awt.Component"/>
+                                      </StatementProvider>
+                                      <Parameters>
+                                        <CodeExpression id="9_txt_buscarProductoPorNombreGV">
+                                          <CodeVariable name="txt_buscarProductoPorNombreGV" type="8194" declaredType="javax.swing.JTextField"/>
+                                          <ExpressionOrigin>
+                                            <ExpressionProvider type="ComponentRef">
+                                              <ComponentRef name="txt_buscarProductoPorNombreGV"/>
+                                            </ExpressionProvider>
+                                          </ExpressionOrigin>
+                                        </CodeExpression>
+                                      </Parameters>
+                                    </CodeStatement>
+                                  </LayoutCode>
+                                </Container>
+                                <Container class="javax.swing.JPanel" name="pnl_tablaProductoGV">
+                                  <Properties>
+                                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                      <Dimension value="[300, 300]"/>
+                                    </Property>
+                                  </Properties>
+                                  <Constraints>
+                                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                                      <BorderConstraints direction="Center"/>
+                                    </Constraint>
+                                  </Constraints>
+
+                                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                                    <Property name="columns" type="int" value="0"/>
+                                    <Property name="rows" type="int" value="2"/>
+                                  </Layout>
+                                  <SubComponents>
+                                    <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                                      <Properties>
+                                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                          <Dimension value="[452, 100]"/>
+                                        </Property>
+                                      </Properties>
+                                      <AuxValues>
+                                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                                      </AuxValues>
+
+                                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                                      <SubComponents>
+                                        <Component class="javax.swing.JTable" name="tb_listadoProductoGV">
+                                          <Properties>
+                                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                              <Font name="Century Gothic" size="14" style="1"/>
+                                            </Property>
+                                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                                              <Table columnCount="0" rowCount="0"/>
+                                            </Property>
+                                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                                              <TableColumnModel selectionModel="0"/>
+                                            </Property>
+                                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                                            </Property>
+                                          </Properties>
+                                        </Component>
+                                      </SubComponents>
+                                    </Container>
+                                    <Container class="javax.swing.JPanel" name="pnl_botonesAgregadoGV">
+                                      <Properties>
+                                        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                          <Dimension value="[300, 50]"/>
+                                        </Property>
+                                      </Properties>
+
+                                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                                        <Property name="columns" type="int" value="0"/>
+                                        <Property name="rows" type="int" value="2"/>
+                                      </Layout>
+                                      <SubComponents>
+                                        <Container class="javax.swing.JPanel" name="jPanel3">
+                                          <Properties>
+                                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                              <Dimension value="[1226, 50]"/>
+                                            </Property>
+                                          </Properties>
+
+                                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                                          <SubComponents>
+                                            <Component class="javax.swing.JLabel" name="lbl_cantidadProductoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="text" type="java.lang.String" value="Cantidad:"/>
+                                              </Properties>
+                                            </Component>
+                                            <Component class="javax.swing.JTextField" name="txt_cantidadProductoGV">
+                                              <Properties>
+                                                <Property name="columns" type="int" value="3"/>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="horizontalAlignment" type="int" value="4"/>
+                                              </Properties>
+                                              <Events>
+                                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_cantidadProductoGVKeyTyped"/>
+                                              </Events>
+                                            </Component>
+                                            <Component class="javax.swing.JButton" name="btn_agregarSeleccionadoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="text" type="java.lang.String" value="Agregar"/>
+                                              </Properties>
+                                              <Events>
+                                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_agregarSeleccionadoGVActionPerformed"/>
+                                              </Events>
+                                            </Component>
+                                            <Component class="javax.swing.JButton" name="btn_quitarSeleccionadoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="text" type="java.lang.String" value="Quitar"/>
+                                              </Properties>
+                                              <Events>
+                                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_quitarSeleccionadoGVActionPerformed"/>
+                                              </Events>
+                                            </Component>
+                                          </SubComponents>
+                                        </Container>
+                                        <Container class="javax.swing.JPanel" name="jPanel4">
+                                          <Properties>
+                                            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                              <Dimension value="[1226, 50]"/>
+                                            </Property>
+                                          </Properties>
+
+                                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                                          <SubComponents>
+                                            <Component class="javax.swing.JLabel" name="lbl_tipoPagoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="text" type="java.lang.String" value="(3) Tipo Pago:"/>
+                                              </Properties>
+                                            </Component>
+                                            <Component class="javax.swing.JComboBox" name="cmb_tipoPagoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                                  <StringArray count="0"/>
+                                                </Property>
+                                                <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                  <Dimension value="[120, 20]"/>
+                                                </Property>
+                                                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                                                  <Dimension value="[130, 25]"/>
+                                                </Property>
+                                              </Properties>
+                                            </Component>
+                                            <Component class="javax.swing.JLabel" name="lbl_precioPagoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="text" type="java.lang.String" value="Precio:"/>
+                                              </Properties>
+                                            </Component>
+                                            <Component class="javax.swing.JTextField" name="txt_precioPagoGV">
+                                              <Properties>
+                                                <Property name="columns" type="int" value="5"/>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="horizontalAlignment" type="int" value="4"/>
+                                              </Properties>
+                                              <Events>
+                                                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_precioPagoGVKeyTyped"/>
+                                              </Events>
+                                            </Component>
+                                            <Component class="javax.swing.JButton" name="btn_agregarPagoGV">
+                                              <Properties>
+                                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                                  <Font name="Century Gothic" size="14" style="1"/>
+                                                </Property>
+                                                <Property name="text" type="java.lang.String" value="Agregar Pago"/>
+                                              </Properties>
+                                              <Events>
+                                                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_agregarPagoGVActionPerformed"/>
+                                              </Events>
+                                            </Component>
+                                          </SubComponents>
+                                        </Container>
+                                      </SubComponents>
+                                    </Container>
+                                  </SubComponents>
+                                </Container>
+                              </SubComponents>
+                            </Container>
+                          </SubComponents>
+                        </Container>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="pnl_pieGestionGV">
+                  <Properties>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[1048, 50]"/>
+                    </Property>
+                  </Properties>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="South"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+                  <SubComponents>
+                    <Container class="javax.swing.JPanel" name="jPanel1">
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                          <BorderConstraints direction="Center"/>
+                        </Constraint>
+                      </Constraints>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JLabel" name="lbl_cantidadProductoVentaGV">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Century Gothic" size="14" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="CANTIDAD DE PRODUCTOS: "/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="lbl_valorCantidadProductoGV">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Century Gothic" size="14" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="lbl_SubTotalGV">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Century Gothic" size="14" style="1"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="TOTAL:"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="lbl_valorSubtotalGV">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Century Gothic" size="14" style="1"/>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnl_listadoGV">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Listado">
+                    <Property name="tabTitle" type="java.lang.String" value="Listado"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+              <SubComponents>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="Center"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTable" name="tb_listadoVentasGV">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Century Gothic" size="14" style="1"/>
+                        </Property>
+                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                          <Table columnCount="0" rowCount="4"/>
+                        </Property>
+                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                        </Property>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="pnl_buscarVentaPorDniGV">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                      <BorderConstraints direction="First"/>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
+                    <Property name="verticalGap" type="int" value="15"/>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="lbl_buscarVentaPorClienteGV">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Century Gothic" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Buscar venta Por Dni:"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txt_buscarVentaPorDniGV">
+                      <Properties>
+                        <Property name="columns" type="int" value="6"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Century Gothic" size="14" style="1"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="4"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_buscarVentaPorDniGVKeyReleased"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btn_filtrarVentaPorDniGV">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Century Gothic" size="14" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Filtrar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_filtrarVentaPorDniGVActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

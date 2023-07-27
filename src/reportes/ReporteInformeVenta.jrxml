@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c04ae9f0-0e22-4648-a3f4-9add5e4e1a44">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="47"/>
+	<parameter name="fechaDesde" class="java.lang.String"/>
+	<parameter name="fechaHasta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+    ventas.`fecha` AS ventas_fecha,
+     ventas.`precio` AS ventas_precio,
+     ventas.`codigo` AS ventas_codigo
+FROM
+     `ventas` ventas
+where ventas.`fecha` between $P{fechaDesde} and $P{fechaHasta}]]>
+	</queryString>
+	<field name="ventas_fecha" class="java.sql.Date"/>
+	<field name="ventas_precio" class="java.lang.Float"/>
+	<field name="ventas_codigo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="74" y="18" width="72" height="53" uuid="bc62d2a9-87cc-4e22-8c29-c1e472fb392c"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\logo-100.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="94" uuid="9256592d-1e1e-4dc1-bf71-bc4d30124bfb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="30"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="94" uuid="06c3a48d-2fb2-4e0b-855c-4a634ddbf483"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60">
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="40" uuid="3a0b64a1-6fb0-4837-9b52-57c9dfb395b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14"/>
+				</textElement>
+				<text><![CDATA[Informe de Ventas]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="50" uuid="4b69286a-4109-4222-ace2-32cdd6481557"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="68" y="13" width="100" height="20" uuid="36f84ad2-98b0-41b3-9a5b-31932751d677">
+					<printWhenExpression><![CDATA[!$F{ventas_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="13" width="100" height="20" uuid="933774af-0778-4464-a225-32b72c1ced8b">
+					<printWhenExpression><![CDATA[!$F{ventas_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="13" width="100" height="20" uuid="0dfd5a61-4e13-4d0d-a874-266cac2f8228">
+					<printWhenExpression><![CDATA[!$F{ventas_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="68" y="0" width="100" height="20" uuid="cb7bb697-42a1-49a0-848b-10636a0c243f"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="100" height="20" uuid="a8b68a25-c668-4cea-bd2d-8cbcb4f5b78c"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="0" width="100" height="20" uuid="f218d883-0c9f-4673-8877-691d27043d5d"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_fecha}.toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="303">
+			<pieChart>
+				<chart>
+					<reportElement x="14" y="16" width="521" height="215" isPrintWhenDetailOverflows="true" uuid="86a17951-dee0-45ee-967a-1bf9349f102b"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{ventas_codigo}]]></keyExpression>
+					<valueExpression><![CDATA[$F{ventas_precio}]]></valueExpression>
+					<labelExpression><![CDATA["$" + $F{ventas_precio}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement x="28" y="283" width="40" height="20" uuid="83f8b1db-b6a5-4351-8d66-2949baf2b5e0"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="68" y="283" width="100" height="20" uuid="67faca41-bcb7-4aeb-8b37-69c2b238fbca"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

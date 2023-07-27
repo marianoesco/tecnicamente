@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c6393aa1-f8f6-4a41-a8b5-7d4e628f8beb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="263"/>
+	<parameter name="idVenta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     ventas.`fecha` AS ventas_fecha,
+     ventas.`observacion` AS ventas_observacion,
+     ventas.`precio` AS ventas_precio,
+     clientes.`apellido` AS clientes_apellido,
+     clientes.`correo` AS clientes_correo,
+     clientes.`direccion` AS clientes_direccion,
+     clientes.`dni` AS clientes_dni,
+     clientes.`nombre` AS clientes_nombre,
+     clientes.`telefono` AS clientes_telefono,
+     usuarios.`nombreUsuario` AS usuarios_nombreUsuario,
+     provincias.`nombre` AS provincias_nombre,
+     localidades.`nombre` AS localidades_nombre,
+     ventas.`codigo` AS ventas_codigo
+FROM
+     `ventas` ventas INNER JOIN `clientes` clientes ON ventas.`cliente` = clientes.`codigo`
+     INNER JOIN `usuarios` usuarios ON ventas.`usuario` = usuarios.`codigo`
+     INNER JOIN `provincias` provincias ON clientes.`provincia` = provincias.`codigo`
+     INNER JOIN `localidades` localidades ON clientes.`localidad` = localidades.`codigo`
+     AND provincias.`codigo` = localidades.`provincia`
+WHERE
+     ventas.`codigo` = $P{idVenta}]]>
+	</queryString>
+	<field name="ventas_fecha" class="java.sql.Date"/>
+	<field name="ventas_observacion" class="java.lang.String"/>
+	<field name="ventas_precio" class="java.lang.Float"/>
+	<field name="clientes_apellido" class="java.lang.String"/>
+	<field name="clientes_correo" class="java.lang.String"/>
+	<field name="clientes_direccion" class="java.lang.String"/>
+	<field name="clientes_dni" class="java.lang.Integer"/>
+	<field name="clientes_nombre" class="java.lang.String"/>
+	<field name="clientes_telefono" class="java.lang.String"/>
+	<field name="usuarios_nombreUsuario" class="java.lang.String"/>
+	<field name="provincias_nombre" class="java.lang.String"/>
+	<field name="localidades_nombre" class="java.lang.String"/>
+	<field name="ventas_codigo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="145" splitType="Stretch">
+			<image>
+				<reportElement x="360" y="39" width="30" height="30" uuid="9558cd79-49aa-418e-b55f-4f578e2d4cc0"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-instagram-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="390" y="39" width="166" height="30" uuid="c4139f53-f3c2-4156-840b-4a8528aa9734"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="360" y="69" width="30" height="30" uuid="e4300e34-e4cf-46be-b991-e654a435fdef"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-whatsapp-50.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="56" y="39" width="72" height="53" uuid="7230bd8e-f55c-4474-ace5-4e69199b0faa"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\logo-100.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="391" y="99" width="165" height="30" uuid="24068133-45d0-47a7-b991-cfd161c8d669"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[San lorenzo 2566]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="9" width="166" height="30" uuid="1a4ac340-2b97-40f1-bef4-e8ab485b2e5d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[Técnica-Mente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="69" width="166" height="30" uuid="b8e9d4bd-e3e8-4786-9f27-bc7ccc0e7bc7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[3764359197]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="9" width="347" height="121" uuid="52600fa1-3a7a-4228-aeee-cde30eef50ec"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="30"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="361" y="9" width="30" height="30" uuid="d905497b-ac39-43ee-8456-def7d342f951"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-facebook-50.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="361" y="100" width="30" height="30" uuid="4dd0942a-ee65-4da1-b1bb-913df3b1b0c4"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-google-maps-50.png"]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="3" width="556" height="134" uuid="5f6b3481-6772-4604-8f08-2c4311724bbd"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="13" width="555" height="40" uuid="e66a971a-cd86-4375-bdfa-26d40bccb4ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14"/>
+				</textElement>
+				<text><![CDATA[Documento no valido como factura]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="1" y="6" width="555" height="47" uuid="9ae44e99-1733-405a-88de-840e15b4bef8"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="65" splitType="Stretch">
+			<textField>
+				<reportElement x="210" y="25" width="126" height="20" isPrintWhenDetailOverflows="true" uuid="1d16c919-7cb2-4b98-afbb-0fb17c4350c9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_apellido}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="25" width="100" height="20" isPrintWhenDetailOverflows="true" uuid="b600e044-e0a0-48c5-9ebc-9886a925513a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_dni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="25" width="126" height="20" isPrintWhenDetailOverflows="true" uuid="88709961-01e1-4d54-839c-37ae857fcfbe"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="25" width="28" height="20" uuid="ed177e3c-7ff5-4bcd-8b95-0dbdcb10a117"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Dni]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="25" width="57" height="20" uuid="09c76c66-3a4e-4922-b71b-30440e658f9d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="362" y="25" width="57" height="20" uuid="9b105acc-33a7-4cd4-8078-a20432bb965c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="1" y="9" width="555" height="52" uuid="7358d8e5-9461-44ac-ab8f-5d12e4946bb2"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<subreport>
+				<reportElement x="-11" y="11" width="556" height="41" uuid="c70db3c3-2c6f-4b24-9c3a-1348c5297fb5"/>
+				<subreportParameter name="idventaSub">
+					<subreportParameterExpression><![CDATA[$P{idVenta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteComprobanteVenta.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="67"/>
+	</detail>
+	<pageFooter>
+		<band height="84" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="25" width="140" height="20" uuid="0f6ac8e7-179b-4c58-95dd-903c6f87aa8a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_fecha}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="25" width="64" height="20" uuid="5daa1057-29e6-4b79-8cec-832d44fd3e61"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="45" width="140" height="20" uuid="76cce93e-1364-4fae-bcf4-c2909fba09b8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuarios_nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="25" width="57" height="20" uuid="a712fdc1-080d-4441-bfa5-b40cc703ecd3"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="70" height="20" uuid="735a8ae8-8b1c-4685-8d16-7902f90f6d99"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Vendedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="25" width="66" height="20" uuid="0f6d49d3-1cff-4bf8-9584-45780d08d587"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<subreport>
+				<reportElement x="-1" y="-54" width="556" height="42" uuid="0d2a9f61-6a47-43f9-be7b-ba0e83136f6d"/>
+				<subreportParameter name="id_venta">
+					<subreportParameterExpression><![CDATA[$P{idVenta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "pagosVenta.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="2" y="14" width="554" height="1" uuid="4a6d6ba3-1c69-4a0b-9a46-6d33ea393f2e"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

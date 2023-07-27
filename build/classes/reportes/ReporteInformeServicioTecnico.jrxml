@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0322a973-0e39-404c-929a-47fdd64135f4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="44"/>
+	<parameter name="fechaDesde" class="java.lang.String"/>
+	<parameter name="fechaHasta" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     serviciostecnicos.`codigo` AS serviciostecnicos_codigo,
+     serviciostecnicos.`fechaDeEgreso` AS serviciostecnicos_fechaDeEgreso,
+     serviciostecnicos.`precio` AS serviciostecnicos_precio
+FROM
+     `serviciostecnicos` serviciostecnicos
+
+where serviciostecnicos.`fechaDeEgreso` between $P{fechaDesde} and $P{fechaHasta}]]>
+	</queryString>
+	<field name="serviciostecnicos_codigo" class="java.lang.Integer"/>
+	<field name="serviciostecnicos_fechaDeEgreso" class="java.sql.Date"/>
+	<field name="serviciostecnicos_precio" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="106">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="84" y="28" width="72" height="53" uuid="fb86885d-f09e-464d-89e6-68a35c98e36f"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\logo-100.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="94" uuid="91c8e3bb-7a2c-479a-a08e-058f5ac4a7ae"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="30"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="106" uuid="d48096cc-d194-4d49-949f-980f20b03513"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70">
+			<staticText>
+				<reportElement x="0" y="22" width="555" height="40" uuid="3a05bd16-69ba-40e5-81d4-9e4c953653eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14"/>
+				</textElement>
+				<text><![CDATA[Informe de Servicio Tecnico]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="12" width="555" height="50" uuid="a6166ba6-4faf-403a-8a16-a4f59eb510ce"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="84" y="13" width="100" height="20" uuid="80651de7-79ce-4560-8972-adb92d976936">
+					<printWhenExpression><![CDATA[!$F{serviciostecnicos_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="13" width="100" height="20" uuid="a712d2b3-68a6-49ee-804c-347fefd2d069">
+					<printWhenExpression><![CDATA[!$F{serviciostecnicos_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha Egreso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="13" width="100" height="20" uuid="e19cbd5c-2c8c-43ad-a4dc-2e1c0a6fdc67">
+					<printWhenExpression><![CDATA[!$F{serviciostecnicos_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="84" y="0" width="100" height="20" uuid="913c6736-5a4f-4997-9141-1a4f45cde562"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="100" height="20" uuid="ca3ac69f-1ed5-4e48-8599-e30a14628bf7"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_fechaDeEgreso}.toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="100" height="20" uuid="c0cc87b7-93e8-4409-8a4e-1c6d77cd1e28"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_precio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="301">
+			<pieChart>
+				<chart>
+					<reportElement x="12" y="16" width="524" height="240" isPrintWhenDetailOverflows="true" uuid="8a7111ea-99b2-4de2-a63d-8236270a3dae"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{serviciostecnicos_codigo}]]></keyExpression>
+					<valueExpression><![CDATA[$F{serviciostecnicos_precio}]]></valueExpression>
+					<labelExpression><![CDATA["$" + $F{serviciostecnicos_precio}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement x="37" y="281" width="47" height="20" uuid="fa86b28a-f31d-4213-809c-532957b4c45b">
+					<printWhenExpression><![CDATA[!$F{serviciostecnicos_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="84" y="281" width="100" height="20" uuid="809ba515-5456-4834-b2c9-4302d0ebb7ea">
+					<printWhenExpression><![CDATA[!$F{serviciostecnicos_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

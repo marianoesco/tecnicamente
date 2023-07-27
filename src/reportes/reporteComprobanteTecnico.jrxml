@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f3242ea5-1e38-49ea-81eb-e89c4fe9416d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="283"/>
+	<parameter name="idServicioTecnicomain" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     serviciostecnicos.`fechaDeEgreso` AS serviciostecnicos_fechaDeEgreso,
+     serviciostecnicos.`fechaDeIngreso` AS serviciostecnicos_fechaDeIngreso,
+     serviciostecnicos.`precio` AS serviciostecnicos_precio,
+     serviciostecnicos.`tipoFalla` AS serviciostecnicos_tipoFalla,
+     serviciostecnicos.`comentariosTecnicos` AS serviciostecnicos_comentariosTecnicos,
+     clientes.`dni` AS clientes_dni,
+     clientes.`nombre` AS clientes_nombre,
+     usuarios.`nombreUsuario` AS usuarios_nombreUsuario,
+     equipos.`descripcion` AS equipos_descripcion,
+     equipos.`modelo` AS equipos_modelo,
+     tiposdeequipo.`nombre` AS tiposdeequipo_nombre,
+     clientes.`apellido` AS clientes_apellido,
+     provincias.`nombre` AS provincias_nombre,
+     localidades.`nombre` AS localidades_nombre,
+     serviciostecnicos.`codigo` AS serviciostecnicos_codigo
+FROM
+     `clientes` clientes INNER JOIN `serviciostecnicos` serviciostecnicos ON clientes.`codigo` = serviciostecnicos.`cliente`
+     INNER JOIN `usuarios` usuarios ON serviciostecnicos.`usuario` = usuarios.`codigo`
+     INNER JOIN `equipos` equipos ON serviciostecnicos.`Equipo` = equipos.`codigo`
+     INNER JOIN `tiposdeequipo` tiposdeequipo ON equipos.`tipoEquipo` = tiposdeequipo.`codigo`
+     INNER JOIN `provincias` provincias ON clientes.`provincia` = provincias.`codigo`
+     INNER JOIN `localidades` localidades ON clientes.`localidad` = localidades.`codigo`
+     AND provincias.`codigo` = localidades.`provincia`
+
+where  serviciostecnicos.`codigo`=$P{idServicioTecnicomain}]]>
+	</queryString>
+	<field name="serviciostecnicos_fechaDeEgreso" class="java.sql.Date"/>
+	<field name="serviciostecnicos_fechaDeIngreso" class="java.sql.Date"/>
+	<field name="serviciostecnicos_precio" class="java.lang.Float"/>
+	<field name="serviciostecnicos_tipoFalla" class="java.lang.String"/>
+	<field name="serviciostecnicos_comentariosTecnicos" class="java.lang.String"/>
+	<field name="clientes_dni" class="java.lang.Integer"/>
+	<field name="clientes_nombre" class="java.lang.String"/>
+	<field name="usuarios_nombreUsuario" class="java.lang.String"/>
+	<field name="equipos_descripcion" class="java.lang.String"/>
+	<field name="equipos_modelo" class="java.lang.String"/>
+	<field name="tiposdeequipo_nombre" class="java.lang.String"/>
+	<field name="clientes_apellido" class="java.lang.String"/>
+	<field name="provincias_nombre" class="java.lang.String"/>
+	<field name="localidades_nombre" class="java.lang.String"/>
+	<field name="serviciostecnicos_codigo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="389" y="62" width="166" height="30" uuid="e96d2d7a-9654-4510-9f24-5a0a038c288e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[3764359197]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="4" width="348" height="121" uuid="e7269974-139d-4f47-b1b9-da1490eef208"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="30"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="389" y="2" width="166" height="30" uuid="465bd1cd-4f0c-414d-a159-4f43f461c59c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[Técnica-Mente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="359" y="32" width="30" height="30" uuid="c87c8bd4-2937-47f9-b4d5-13dbe042ac44"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-instagram-50.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="360" y="2" width="30" height="30" uuid="2147c216-ecf9-491b-9338-311c2be9cfa4"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-facebook-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="389" y="32" width="166" height="30" uuid="29ffc784-2ffd-4d10-a42a-201f1e3549a9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="359" y="62" width="30" height="30" uuid="b5dcef81-5bf3-4c14-98df-71c7b0b0fe80"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-whatsapp-50.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="359" y="93" width="30" height="30" uuid="7a1b573c-46ff-41b0-b58e-0c81e16d0dee"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-google-maps-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="389" y="92" width="165" height="30" uuid="10a8b968-13fc-4f3c-8369-5e14daf0291e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[San lorenzo 2566]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="63" y="40" width="72" height="53" uuid="3da002e6-fb40-4d33-9708-007a2eeb03e8"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\logo-100.png"]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="4" width="554" height="118" uuid="48501d29-86c5-4786-baaa-13bef9f00230"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="63" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="-1" y="0" width="555" height="63" uuid="b17a1f1f-d7ca-4b69-84be-71427cfab964"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="10" width="555" height="40" uuid="81b7a998-424a-41a6-bc08-fddfe445c41c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14"/>
+				</textElement>
+				<text><![CDATA[Documento no valido como factura]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="174" splitType="Stretch">
+			<textField>
+				<reportElement x="44" y="22" width="119" height="20" uuid="6e11e43b-0fad-43ee-84d8-752b2d38909e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_dni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="22" width="118" height="20" uuid="06643a8e-7266-41cd-8c43-47a11b67d176"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="22" width="111" height="20" uuid="bc2b6049-0cb2-465d-aa27-8632cfc4f58e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clientes_apellido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="375" y="22" width="61" height="20" uuid="241b615d-d8cc-4100-9776-75f34f8396c6"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="174" y="22" width="55" height="20" uuid="9e1de3d7-8347-449d-88dd-3eb6f85da492"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Apellido]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="22" width="34" height="20" uuid="792544a5-d639-40e0-898e-e5a9c5c0fb3b"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Dni]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="71" width="100" height="20" uuid="3c702c83-f64d-4a4b-b257-348f0a30ce39"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipos_modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="71" width="118" height="20" uuid="fffc171c-11b3-4817-8d5d-047834a13302"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tiposdeequipo_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="71" width="120" height="52" uuid="1b1dc2ec-ecf6-4a98-b309-e6fa1fef0a5e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipos_descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="71" width="53" height="20" uuid="a0de30bd-ff53-44bd-b41d-82b4890da8d1"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="163" y="71" width="77" height="20" uuid="93e36c39-bc22-41e9-81c3-b2b49e9b4d99"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="363" y="71" width="73" height="20" uuid="ded3020d-685f-470c-b21d-7aef7f9e75cc"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Tipo Equipo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="123" width="177" height="51" uuid="5450324e-7504-4e88-a05e-4be6a452b5cc"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_tipoFalla}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="123" width="130" height="51" uuid="f4a2c6c6-8ec2-4599-a01f-cec7e67cc664"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_comentariosTecnicos}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="123" width="45" height="20" uuid="a0321bed-aef2-47b1-b565-b3bb97edb0ba"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Falla ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="123" width="84" height="20" uuid="3fb90f08-4e38-4727-ac4f-ff7331d19a3e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Comentarios ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="12" width="554" height="1" uuid="81b847dc-fe7c-4893-9386-d70843d73ca9"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+			<subreport>
+				<reportElement x="-13" y="0" width="555" height="41" isRemoveLineWhenBlank="true" uuid="a5c54565-6022-41e4-8d4d-c3246d9a029f"/>
+				<subreportParameter name="idservicioTecnicoprodsub">
+					<subreportParameterExpression><![CDATA[$P{idServicioTecnicomain}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteProductoIncluidosServiTec.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="47">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+			<subreport>
+				<reportElement x="-13" y="0" width="555" height="39" isRemoveLineWhenBlank="true" uuid="2b826733-ed7b-44ed-af5c-cb9f8b92751a"/>
+				<subreportParameter name="idservicioTecnicoSersub">
+					<subreportParameterExpression><![CDATA[$P{idServicioTecnicomain}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteServicioIncluidoServiTec.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="61"/>
+	</detail>
+	<pageFooter>
+		<band height="94">
+			<textField isBlankWhenNull="true">
+				<reportElement x="110" y="60" width="100" height="20" uuid="cc86c6ce-845b-48b7-8d60-15c9c05eb03e"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_fechaDeEgreso}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="40" width="100" height="20" uuid="fdcf1aab-5113-4d6f-a45d-d4bff9290389"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha Ingreso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="60" width="100" height="20" uuid="1857d9c3-f8af-4cf2-8942-21fde0b363a8"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha Egreso]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="478" y="40" width="76" height="30" uuid="fbb00be1-71fd-42fb-853f-f3e2981e643f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_precio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="443" y="40" width="35" height="30" uuid="f39abb23-7390-46d6-bcb5-53e583adb7a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="40" width="100" height="20" uuid="756aa474-8af2-4979-b457-0e492d45d756"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serviciostecnicos_fechaDeIngreso}.toString()]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-13" y="-46" width="555" height="32" isRemoveLineWhenBlank="true" uuid="80c8ca0a-d931-47cc-b6ca-dd9df5a49386"/>
+				<subreportParameter name="id_servicioTecnico">
+					<subreportParameterExpression><![CDATA[$P{idServicioTecnicomain}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "pagosServicioTecnico.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="3" y="21" width="551" height="1" uuid="990be6ae-a005-4788-9b8e-2ae8d9d3aecc"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>

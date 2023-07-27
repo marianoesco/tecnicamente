@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="41cb0d59-53c7-49ac-985c-cd4404a06769">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="69"/>
+	<parameter name="fechaHasta" class="java.lang.String"/>
+	<parameter name="fechaDesde" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     compras.`precio` AS compras_precio,
+     compras.`codigo` AS compras_codigo,
+     compras.`fecha` AS compras_fecha
+FROM
+     `compras` compras
+
+where compras.`fecha` between $P{fechaDesde} and $P{fechaHasta}]]>
+	</queryString>
+	<field name="compras_precio" class="java.lang.Float"/>
+	<field name="compras_codigo" class="java.lang.Integer"/>
+	<field name="compras_fecha" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="115">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="84" y="28" width="72" height="53" uuid="a3ddb2d4-91f2-4862-b270-54f584c6647e"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\logo-100.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="10" width="555" height="94" uuid="e2b7757d-f105-4941-8865-4bd893b97dc7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="30"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="8" width="555" height="96" uuid="3a9eb85e-afe5-4bf3-b04e-528af0085296"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="69">
+			<staticText>
+				<reportElement x="0" y="14" width="555" height="40" uuid="69edc22f-6ab1-414b-b41f-bf30445be3c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14"/>
+				</textElement>
+				<text><![CDATA[Informe de Compras]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="8" width="555" height="54" uuid="045e44a1-2d0b-4aee-9f20-1580398cd4d8"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="83" y="30" width="100" height="20" uuid="8d7c1e78-bd3b-4a45-95af-14838cef8b28">
+					<printWhenExpression><![CDATA[!$F{compras_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="283" y="30" width="100" height="20" uuid="68332b78-2f43-4106-94c0-e9b864b9069a">
+					<printWhenExpression><![CDATA[!$F{compras_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="30" width="100" height="20" uuid="fc2e79a9-07c8-44b6-8f4c-1fb6ce5ef20c">
+					<printWhenExpression><![CDATA[!$F{compras_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23">
+			<textField>
+				<reportElement x="83" y="0" width="100" height="20" uuid="7a2ff174-f445-4fa4-b89b-2a4e70d26fe6"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compras_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="0" width="100" height="20" uuid="f59606eb-32d4-448c-a38a-0c41bb2aaa77"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compras_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="0" width="100" height="20" uuid="7c58ece4-c1ba-4a0a-b343-3895464023a5"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compras_fecha}.toString()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="301">
+			<pieChart>
+				<chart>
+					<reportElement x="11" y="0" width="499" height="250" isPrintWhenDetailOverflows="true" uuid="535d979b-f573-44fc-9be1-2aa829662cf8"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<keyExpression><![CDATA[$F{compras_codigo}]]></keyExpression>
+					<valueExpression><![CDATA[$F{compras_precio}]]></valueExpression>
+					<labelExpression><![CDATA["$"+ $F{compras_precio}.toString()]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<staticText>
+				<reportElement x="12" y="275" width="44" height="20" uuid="bce8964c-1545-4fc5-8c12-5aac21b0a7ac">
+					<printWhenExpression><![CDATA[!$F{compras_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<textField pattern="yyyy-MM-dd">
+				<reportElement x="56" y="275" width="100" height="20" uuid="9cbdd20b-2297-40e0-a379-97a4d6d1a393">
+					<printWhenExpression><![CDATA[!$F{compras_codigo}.equals( 0 )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cdd85757-3ec0-407f-a07e-eccc7215ac9c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idcompra" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\reportes\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     compras.`codigo` AS compras_codigo,
+     compras.`fecha` AS compras_fecha,
+     compras.`precio` AS compras_precio,
+     compras.`usuario` AS compras_usuario,
+     detallescompra.`cantidad` AS detallescompra_cantidad,
+     detallescompra.`descripcion` AS detallescompra_descripcion,
+     detallescompra.`nombreProducto` AS detallescompra_nombreProducto,
+     detallescompra.`precio` AS detallescompra_precio,
+     detallescompra.`subtotal` AS detallescompra_subtotal,
+     productos.`marca` AS productos_marca,
+     productos.`tipoProducto` AS productos_tipoProducto,
+     marcas.`nombre` AS marcas_nombre,
+     detallescompra.`codigo` AS detallescompra_codigo,
+     tiposdeproductos.`nombre` AS tiposdeproductos_nombre,
+     usuarios.`nombreUsuario` AS usuarios_nombreUsuario,
+     usuarios.`nivel` AS usuarios_nivel
+FROM
+     `compras` compras INNER JOIN `detallescompra` detallescompra ON compras.`codigo` = detallescompra.`compra`
+     INNER JOIN `productos` productos ON detallescompra.`producto` = productos.`codigo`
+     INNER JOIN `marcas` marcas ON productos.`marca` = marcas.`codigo`
+     INNER JOIN `tiposdeproductos` tiposdeproductos ON productos.`tipoProducto` = tiposdeproductos.`codigo`
+     INNER JOIN `usuarios` usuarios ON compras.`usuario` = usuarios.`codigo` 
+WHERE
+     compras.`codigo` = $P{idcompra}]]>
+	</queryString>
+	<field name="compras_codigo" class="java.lang.Integer"/>
+	<field name="compras_fecha" class="java.sql.Date"/>
+	<field name="compras_precio" class="java.lang.Float"/>
+	<field name="compras_usuario" class="java.lang.Integer"/>
+	<field name="detallescompra_cantidad" class="java.lang.Integer"/>
+	<field name="detallescompra_descripcion" class="java.lang.String"/>
+	<field name="detallescompra_nombreProducto" class="java.lang.String"/>
+	<field name="detallescompra_precio" class="java.lang.Float"/>
+	<field name="detallescompra_subtotal" class="java.lang.Float"/>
+	<field name="productos_marca" class="java.lang.Integer"/>
+	<field name="productos_tipoProducto" class="java.lang.Integer"/>
+	<field name="marcas_nombre" class="java.lang.String"/>
+	<field name="detallescompra_codigo" class="java.lang.Integer"/>
+	<field name="tiposdeproductos_nombre" class="java.lang.String"/>
+	<field name="usuarios_nombreUsuario" class="java.lang.String"/>
+	<field name="usuarios_nivel" class="java.lang.Integer"/>
+	<variable name="compras_usuario_1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{compras_usuario}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="134" splitType="Stretch">
+			<staticText>
+				<reportElement x="-1" y="3" width="360" height="121" uuid="35e52f6d-7cf2-4868-86fb-31a689d40ba2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="30"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="55" y="33" width="72" height="53" uuid="01060868-2e05-4ba3-9e88-66f0b97e4817"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\logo-100.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="360" y="3" width="30" height="30" uuid="61af4b55-0208-49b6-aa81-0ca39e6f624f"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-facebook-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="389" y="3" width="166" height="30" uuid="e1199dad-3a2a-4507-93f3-1787f02ed2d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[Técnica-Mente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="359" y="33" width="30" height="30" uuid="35ef6f7d-e801-4186-ac8c-0ba90ae2b72a"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-instagram-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="389" y="33" width="166" height="30" uuid="4bdf1255-527b-4d3f-b986-dee9a68a4ac1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[Tecnicamente]]></text>
+			</staticText>
+			<image>
+				<reportElement x="359" y="63" width="30" height="30" uuid="ca14612f-8043-4a27-89e0-2b0cd3ca1c5b"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-whatsapp-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="389" y="63" width="166" height="30" uuid="94d1794f-fb99-400a-ad7a-f8ff757a136a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[3764359197]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="359" y="93" width="30" height="30" uuid="c8400ea4-0d70-422a-8567-50a7311cb707"/>
+				<imageExpression><![CDATA["C:\\Users\\Usuario\\Documents\\NetBeansProjects\\TECNICAMENTE\\src\\imagenes\\icons8-google-maps-50.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="390" y="93" width="165" height="30" uuid="7c9e7d5d-8589-48d7-9e2d-fbf2fe029144"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="18"/>
+				</textElement>
+				<text><![CDATA[San lorenzo 2566]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="-1" y="0" width="556" height="129" uuid="cb3c96d7-84e3-4d2c-9d31-68354cad515f"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="542" height="43" uuid="315964d8-8a5d-47b5-acff-24d8cf008139"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14"/>
+				</textElement>
+				<text><![CDATA[Documento no valido como factura]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="13" y="0" width="542" height="43" uuid="c8bdb6c1-72c1-40f9-b457-07bd0ed0ae3e"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="127" y="23" width="100" height="20" uuid="ca52907e-cba8-4104-8372-b562c7bcbcd3">
+					<printWhenExpression><![CDATA[!$F{compras_fecha}.equals(null)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compras_fecha}.toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="80" y="23" width="47" height="20" uuid="297a026a-7fa3-4e2d-8cac-5696ab008da1"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="368" y="23" width="119" height="20" uuid="518d7300-cbf1-43c0-b14f-0712e8ea6da0">
+					<printWhenExpression><![CDATA[!$F{usuarios_nombreUsuario}.equals(null)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{usuarios_nombreUsuario}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="308" y="23" width="52" height="20" uuid="b6060dc7-68fd-4f48-8c62-b8aee8c0df95"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="77" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+			<subreport>
+				<reportElement x="-16" y="0" width="571" height="68" uuid="9188c1a7-3007-46a3-8d39-c629c3cdf5f9"/>
+				<subreportParameter name="idcomprasub">
+					<subreportParameterExpression><![CDATA[$P{idcompra}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteComprobanteCompra.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="404" y="17" width="54" height="20" uuid="42fe138a-043a-476a-957f-99480afd3525">
+					<printWhenExpression><![CDATA[!$F{compras_precio}.equals(null)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{compras_precio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="368" y="17" width="36" height="20" uuid="2b6641da-8c16-4fac-a4ce-3e6ce693eb90"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
